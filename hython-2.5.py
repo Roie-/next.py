@@ -20,7 +20,7 @@ class Animal:
         return self._name
 
     def is_hungry(self):
-        '''check if the animal is hungry(variable hunger>0),
+        '''check if the animal is hungry(param hunger>0),
             return True if hungry, False otherwisw'''
         if self._hunger > 0:
             return True
@@ -28,12 +28,11 @@ class Animal:
             return False 
 
     def feed(self):
-        '''subtruct 1 "point" from hungr level when the method called'''
+        '''subtruct 1 "point" from hungr level'''
         self._hunger -= 1
 
     def __str__(self):
-        '''print the name of the animal: override by every subclass'''
-        # return self._name
+        '''print type and name of the animal: override by every subclass'''
         return type(self).__name__+" "+self._name
 
     def talk(self):
@@ -87,8 +86,8 @@ class Cat(Animal):
 # subclass type skunk
 # -------------------
 class Skunk(Animal):
-    # param stink_count: stink level of skunk
     def __init__(self,name,hunger,stink_count=6):
+        '''param stink_count: stink level of skunk'''
         self._name = name
         self._hunger = hunger
         self._stink_count = stink_count
@@ -131,8 +130,8 @@ class Unicorn(Animal):
 # subclass type dragon
 # --------------------
 class Dragon(Animal):
-    # param color: color of dragon
     def __init__(self,name,hunger,color="Green"):
+        '''param color: color of dragon'''
         self._name = name
         self._hunger = hunger
         self._color = color
@@ -181,13 +180,12 @@ def main():
  
     # main proccess:
     # 1) print type and name for every hungry animal
-    # 2) calling feed method until hungry level = 0
+    # 2) calling 'feed' method until hungry level = 0
     # 3) print the unique talk and special method of every animal 
     for animal in zoo_lst:
         while animal.is_hungry():
             animal.feed()
 
-        # print (type(animal).__name__,animal) 
         print (animal)       
         print (animal.talk())
 
