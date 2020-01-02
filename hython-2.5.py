@@ -200,6 +200,7 @@ def main():
         else:
             print(animal.breath_fire()) 
 
+        # for better reading the output
         print("---")    
 
 # print the zoo name
