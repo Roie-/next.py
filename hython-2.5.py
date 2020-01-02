@@ -198,7 +198,9 @@ def main():
         elif isinstance(animal,Unicorn):
             print(animal.sing())
         else:
-            print(animal.breath_fire())     
+            print(animal.breath_fire()) 
+
+        print("---")    
 
 # print the zoo name
     print("\n",animal.zoo_name)  
