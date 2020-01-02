@@ -8,7 +8,7 @@ class Animal:
         param hunger:hunger level of animal
     '''
     # class variable:name of the zoo
-    zoo_name = "Hayaton1"
+    zoo_name = "Hayaton"
 
     # init method
     def __init__(self,name,hunger=0):
