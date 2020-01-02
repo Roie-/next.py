@@ -1,13 +1,13 @@
-# ------------------
-# Super class Animal
-# ------------------
+# -----------------------
+# Super class type Animal
+# -----------------------
 class Animal:
     ''' params in all classes:
-        param self:reference to the object
-        param name:name of animal
-        param hunger:hunger level of animal
+        param self: reference to the object
+        param name: name of animal
+        param hunger: hunger level of animal
     '''
-    # class variable:name of the zoo
+    # class variable: name of the zoo
     zoo_name = "Hayaton"
 
     # init method
@@ -32,107 +32,123 @@ class Animal:
         self._hunger -= 1
 
     def __str__(self):
-        '''print the name of the animal'''
-        return self._name
+        '''print the name of the animal: override by every subclass'''
+        # return self._name
+        return type(self).__name__+" "+self._name
 
     def talk(self):
         '''abstract method: implemented in every subclass'''
         pass
 
-# ------------
-# Subclass dog
-# ------------
+
+# -----------------
+# Subclass type dog
+# -----------------
 class Dog(Animal):
     def __init__(self,name,hunger):
         self._name = name
         self._hunger = hunger
 
     def __str__(self):
-        '''print the name of the animal'''
+        '''print dog name'''
         return super().__str__()
 
     def talk(self):
-        '''the animal way of talk'''
-        print ("woof woof")   
+        '''print dog way of talk'''
+        return ("woof woof")   
 
     def fetch_stick(self):
-        '''print unique talk'''
-        print("There you go, sir!")
+        '''print dog unique talk'''
+        return ("There you go, sir!")
 
-# ------------
-# subclass cat
-# ------------
+
+# -----------------
+# subclass type cat
+# -----------------
 class Cat(Animal):
     def __init__(self,name,hunger):
         self._name = name
         self._hunger = hunger
         
     def __str__(self):
-        '''print the name of the animal'''
+        '''print cat name'''
         return super().__str__()
 
     def talk(self):
-        print ("meow")   
+        '''print cat way of talk'''
+        return ("meow")   
 
     def chase_laser(self):
-        print("Meeeeow")
+        '''print cat unique talk'''
+        return ("Meeeeow")
 
-# --------------
-# subclass skunk
-# --------------
+
+# -------------------
+# subclass type skunk
+# -------------------
 class Skunk(Animal):
-    # param self:reference to the object
+    # param stink_count: stink level of skunk
     def __init__(self,name,hunger,stink_count=6):
         self._name = name
         self._hunger = hunger
         self._stink_count = stink_count
         
     def __str__(self):
+        '''print skunk name'''
         return super().__str__()
 
     def talk(self):
-        print ("tsssss")   
+        '''print skunk way of talk'''
+        return ("tsssss")   
 
     def stink(self):
-        print("Dear lord!")
+        '''print skunk unique talk'''
+        return ("Dear lord!")
 
-# ----------------
-# subclass unicorn
-# ----------------
+
+# ---------------------
+# subclass type unicorn
+# ---------------------
 class Unicorn(Animal):
-    # param self:reference to the object
     def __init__(self,name,hunger):
         self._name = name
         self._hunger = hunger
         
-
     def __str__(self):
+        '''print unicorn name'''
         return super().__str__()
 
     def talk(self):
-        print ("Good day, darling")   
+        '''print unicorn way of talk'''
+        return ("Good day, darling")   
 
     def sing(self):
-        print("I'm not your toy...")
+         '''print unicorn unique talk'''
+         return("I'm not your toy...")
 
-# ---------------
-# subclass dragon
-# ---------------
+
+# --------------------
+# subclass type dragon
+# --------------------
 class Dragon(Animal):
-    # param self:reference to the object
+    # param color: color of dragon
     def __init__(self,name,hunger,color="Green"):
         self._name = name
         self._hunger = hunger
         self._color = color
 
     def __str__(self):
+        '''print dragon name'''
         return super().__str__()
         
     def talk(self):
-        print ("Raaaawr")   
+        '''print dragon way of talk'''
+        return ("Raaaawr")   
 
     def breath_fire(self):
-        print("$@#$#@$")
+        '''print dragon unique talk'''
+        return ("$@#$#@$")
+
 
 # ----------------
 # start of program
@@ -164,14 +180,15 @@ def main():
     zoo_lst.append(dragon1)
  
     # main proccess:
-    # for every hungry animal we print her type and name and
-    # calling feed method until variable hungry = 0
-    # then, print the unique talk and special method of every animal 
+    # 1) print type and name for every hungry animal
+    # 2) calling feed method until hungry level = 0
+    # 3) print the unique talk and special method of every animal 
     for animal in zoo_lst:
         while animal.is_hungry():
             animal.feed()
 
-        print (type(animal).__name__,animal)        
+        # print (type(animal).__name__,animal) 
+        print (animal)       
         print (animal.talk())
 
         if isinstance(animal,Dog):
