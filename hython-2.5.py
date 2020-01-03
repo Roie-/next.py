@@ -1,5 +1,5 @@
 # -----------------
-# class type Animal
+# class type Animal test push origin
 # -----------------
 class Animal:
     ''' params in all classes:
