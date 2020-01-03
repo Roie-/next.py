@@ -1,6 +1,6 @@
-# -----------------------
-# Super class type Animal
-# -----------------------
+# -----------------
+# class type Animal
+# -----------------
 class Animal:
     ''' params in all classes:
         param self: reference to the object
