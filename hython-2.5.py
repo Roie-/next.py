@@ -33,7 +33,7 @@ class Animal:
 
     def __str__(self):
         '''print type and name of the animal: override by every subclass'''
-        return type(self).__name__+" "+self._name
+        return "{} {}".format(type(self).__name__,self._name)
 
     def talk(self):
         '''abstract method: implemented in every subclass'''
