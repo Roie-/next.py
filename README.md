@@ -1,3 +1,5 @@
 # next.py (Intermediate Python Course)
 
-Very simple and basic solution for assignments 2.5 (oop) and 5.4 (Iterator+Generator)
+Very simple and basic solution for 2  assignments:
+  2.5 --> hython (oop)
+  5.4 --> idcheck (Iterator+Generator)
