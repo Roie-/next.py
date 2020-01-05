@@ -7,7 +7,7 @@ class Animal:
         param name: name of animal
         param hunger: hunger level of animal
     '''
-    # class variable: name of the zoo
+    # class param: name of the zoo
     zoo_name = "Hayaton"
 
     # init method
