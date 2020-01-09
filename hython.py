@@ -204,6 +204,6 @@ def main():
         print("---")    
 
 # print the zoo name
-    print("\n",animal.zoo_name)  
+    print("\n",Animal.zoo_name)  
 
 main()
