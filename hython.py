@@ -178,7 +178,7 @@ def main():
     dragon1 = Dragon("McFly",80)
     zoo_lst.append(dragon1)
  
-    # main proccess:
+    # main process:
     # 1) print type and name for every hungry animal
     # 2) calling 'feed' method until hungry level = 0
     # 3) print the unique talk and special method of every animal 
