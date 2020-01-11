@@ -55,10 +55,10 @@ def check_id_valid(id_number):
         raise ValueError("Please enter exectly 9 positive integer.")
 
     # one liner valid ID check
-        if sum(sum(map(int, str(int(a)*(i%2+1)))) for i, a in enumerate("{0:09d}".format(int(id_number)))) % 10 == 0:
-            return True
-        else:
-            return False
+    if sum(sum(map(int, str(int(a)*(i%2+1)))) for i, a in enumerate("{0:09d}".format(int(id_number)))) % 10 == 0:
+        return True
+    else:
+        return False
 
 
 
