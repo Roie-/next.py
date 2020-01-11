@@ -1,5 +1,9 @@
 import math
 
+
+# ---------
+# Exception
+# ---------
 class NotPositiveNumber(Exception):
     def __init__(self,arg):
         self._arg = arg
@@ -11,7 +15,9 @@ class NotPositiveNumber(Exception):
         return self._arg
 
 
-
+# --------
+# Iterator
+# --------
 class IDIterator:
     def __init__(self,id):
         self._id = id
@@ -26,7 +32,17 @@ class IDIterator:
         return "{}".format(self._id)
 
 
+# ---------
+# Generator
+# ---------
+def id_generator(id):
+    '''variable id: ID number'''
+    return id
 
+
+# --------
+# ID check
+# --------
 def check_id_valid(id_number):
     '''
     Take the ID number on id_number and check
@@ -62,12 +78,7 @@ def check_id_valid(id_number):
 
 
 
-# ------------------
-# generator function
-# ------------------
-def id_generator(id):
-    '''variable id: ID number'''
-    return id
+
 
 
 # ----------------
