@@ -32,7 +32,7 @@ class IDIterator:
     Raises:
     StopIteration --> When ID number higher from limit 
     '''
-    def __init__(self,id,stop=999999999):
+    def __init__(self,id=0,stop=999999999):
         self._id = id
         self._stop = stop
 
@@ -56,7 +56,7 @@ class IDIterator:
 
 
 # ------------------
-# Function Generator
+# Generator function 
 # ------------------
 def id_generator(id):
     '''
@@ -68,7 +68,7 @@ def id_generator(id):
     '''
     id += 1
     stop = 999999999
-    while id < stop:
+    while id <= stop:
         yield id
         id += 1
 
@@ -125,55 +125,65 @@ def check_id_valid(id_number):
 # Start of program
 # ----------------
 def main():
-    #process
+    '''
+    process:
+    1) Get and check input from user
+    2) Print 10 valid ID number from Iterator
+    3) Print 10 valid ID number from Generator
+
+    params:
+        id_number --> Input from user
+        id_valid ---> Booliane Result from function
+                      check_id_valid (True/False)
+        id_count ---> Number of valid ID's
+        id_iter ----> Object of type Iterator
+        id_gen -----> Object of type Generator
+    '''
     id_number = int(input("Please enter ID number (9 integer digits only):\n"))
     input_check(id_number)          
-    res = check_id_valid(id_number)
+    id_valid = check_id_valid(id_number)
    
     print('\n10 valid ID from Iterator\n-------------------------')
-    ok = 0
-    it = IDIterator(id_number)
-    if res:
-        print(it)
-        ok += 1
-        id_number = next(it)
-    
-    id_number = next(it)
-    while ok < 10:
-        res = check_id_valid(id_number)
-        if res:
-            print(it)
-            id_number = next(it)
-            ok += 1
+    id_count = 0
+    id_iter = IDIterator(id_number)
+    if id_valid:
+        print(id_iter)
+        id_count += 1
+        id_number = next(id_iter)
+    else:
+        id_number = next(id_iter)
+
+    while id_count < 10:
+        id_valid = check_id_valid(id_number)
+        if id_valid:
+            print(id_iter)
+            id_number = next(id_iter)
+            id_count += 1
         else:
-            id_number = next(it)
+            id_number = next(id_iter)
             continue    
    
 
-    print('\n10 valid ID from Generator\n-------------------------')
-    ok = 0
-    gen = id_generator(id_number)
-    res = check_id_valid(id_number)
+    print('\n10 valid ID from Generator\n--------------------------')
+    id_count = 0
+    id_gen = id_generator(id_number)
+    # id_valid = check_id_valid(id_number)
 
-    if res:
-        print(gen)
-        ok += 1
-        id_number = next(gen)
-    
-    id_number = next(gen)
-    while ok < 10:
-        res = check_id_valid(id_number)
-        if res:
+    if id_valid:
+        print(id_gen)
+        id_count += 1
+        id_number = next(id_gen)
+    else:
+        id_number = next(id_gen)
+
+    while id_count < 10:
+        id_valid = check_id_valid(id_number)
+        if id_valid:
             print(id_number)
-            id_number = next(gen)
-            ok += 1
+            id_number = next(id_gen)
+            id_count += 1
         else:
-            id_number = next(gen)
+            id_number = next(id_gen)
             continue  
-
-    print (id_generator.__doc__)
-    print (input_check.__doc__)
-    print (check_id_valid.__doc__)
-          
 
 main()
