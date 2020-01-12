@@ -145,7 +145,7 @@ def main():
    
     print('\n10 valid ID from Iterator\n-------------------------')
     id_count = 0
-    id_iter = IDIterator(id_number)
+    id_iter = iter(IDIterator(id_number))
     if id_valid:
         print(id_iter)
         id_count += 1
@@ -167,7 +167,7 @@ def main():
     print('\n10 valid ID from Generator\n--------------------------')
     id_count = 0
     id_gen = id_generator(id_number)
-    # id_valid = check_id_valid(id_number)
+    id_valid = check_id_valid(id_number)
 
     if id_valid:
         print(id_gen)
