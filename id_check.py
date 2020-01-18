@@ -11,6 +11,7 @@ class NotPositiveNumber(Exception):
     def __str__(self):
         raise "argument {} is not a positive integer.".format(self._arg)    
 
+
     def get_arg(self):
         return self._arg
 
@@ -25,7 +26,7 @@ class IDIterator:
     Custom iterators
 
     Params:
-    self._id --> Input ID number from user
+    self._id ----> Input ID number from user
     self._stop --> ID number limit
 
     Raises:
@@ -123,7 +124,7 @@ def check_id_valid(id_number):
 # ----------------
 # Start of program
 # ----------------
-def main():
+if __name__ == "__main__":
     '''
     process:
     1) Get and check input from user
@@ -183,6 +184,4 @@ def main():
             id_count += 1
         else:
             id_number = next(id_gen)
-            continue  
-
-main()
+            continue
