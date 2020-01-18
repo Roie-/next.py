@@ -1,8 +1,4 @@
-from PIL import Image
 
-
-img = Image.open('pic.jpg')
-img.show()
 
 
 # list of dots, in the following format: [x, y, x, y, x, y,...]
