@@ -18,14 +18,14 @@ class NotPositiveNumber(Exception):
 # Class Iterator
 # --------------
 class IDIterator:
-    ''' Summery: Custom iterators.
+    ''' Summery: Custom iterators
 
         Params:
-        self._id ----> Input ID number from user.
-        self._stop --> ID number limit.
+        self._id ----> Input ID number from user
+        self._stop --> ID number limit
 
         Raises:
-        StopIteration --> When ID number higher from limit.
+        StopIteration --> When ID number higher from limit
     '''
     def __init__(self,id=0,stop=999999999):
         self._id = id
@@ -48,11 +48,11 @@ class IDIterator:
 # Generator function 
 # ------------------
 def id_generator(id):
-    ''' Summery: Generate next ID number.
+    ''' Summery: Generate next ID number
 
         Params: 
-        id ----> Input ID number.
-        stop --> ID number limit.
+        id ----> Input ID number
+        stop --> ID number limit
     '''
     id += 1
     stop = 999999999
@@ -66,11 +66,11 @@ def id_generator(id):
 # --------------------
 def input_check(id):
     ''' Summery: Raise exception if not valid input
-                (string/negetive num/length != 9).
+                (string/negetive num/length != 9)
     
         Raises:
-        NotPositiveNumber --> negetive number or string.
-        ValueError ---------> Not exectly 9 positive digits.
+        NotPositiveNumber --> negetive number or string
+        ValueError ---------> Not exectly 9 positive digits
     '''
     try:            
         if not (isinstance(id,int)) or id < 0:
@@ -88,11 +88,11 @@ def input_check(id):
 # ID number validation
 # --------------------
 def check_id_valid(id_number):
-    ''' Summery: Chek if ID number is valid.
-                 return True if yes, False otherwise.
+    ''' Summery: Chek if ID number is valid,
+                 return True if yes, False otherwise
 
         Params:
-        id_number --> Input from user.
+        id_number --> Input from user
     '''   
     if sum(sum(map(int, str(int(a)*(i%2+1)))) for i, a in enumerate("{0:09d}".format(int(id_number)))) % 10 == 0:
         return True
@@ -104,17 +104,17 @@ def check_id_valid(id_number):
 # Start of program
 # ----------------
     ''' Process:
-        1) Get and check input from user.
-        2) Print 10 valid ID number from Iterator.
-        3) Print 10 valid ID number from Generator.
+        1) Get and check input from user
+        2) Print 10 valid ID number from Iterator
+        3) Print 10 valid ID number from Generator
 
         Params:
-        id_number --> Input from user.
+        id_number --> Input from user
         id_valid ---> Booliane Result from function
-                      check_id_valid (True/False).
-        id_count ---> Number of valid ID's.
-        id_iter ----> Object of type Iterator.
-        id_gen -----> Object of type Generator.
+                      check_id_valid (True/False)
+        id_count ---> Number of valid ID's
+        id_iter ----> Object of type Iterator
+        id_gen -----> Object of type Generator
     '''
 if __name__ == '__main__':
 
