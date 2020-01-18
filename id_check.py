@@ -2,6 +2,7 @@ import math
 
 
 ### Class Exception ###
+#   ---------------
 class NotPositiveNumber(Exception):
     def __init__(self,arg):
         self._arg = arg
@@ -14,7 +15,8 @@ class NotPositiveNumber(Exception):
 
 
 
-#### Class Iterator ###
+### Class Iterator ###
+#   --------------
 class IDIterator:
 ''' Summery: Custom iterators
 
@@ -42,7 +44,8 @@ class IDIterator:
 
 
 
-#### Generator function ###
+### Generator function ###
+#   ------------------
 def id_generator(id):
 ''' Summery: Generate next ID number
 
@@ -58,6 +61,7 @@ def id_generator(id):
 
 
 ### Function Input check ###
+#   --------------------
 def input_check(id):
 ''' Summery: Raise exception if not valid input
             (string/negetive num/length != 9) 
@@ -78,6 +82,7 @@ def input_check(id):
 
 
 ### ID number validation ###
+#   --------------------
 def check_id_valid(id_number):
 ''' Summery: Chek if ID number is valid
              return True if yes, False otherwise
@@ -91,6 +96,7 @@ def check_id_valid(id_number):
 
 
 ### Start of program ###
+#   ----------------
 ''' Process:
     1) Get and check input from user
     2) Print 10 valid ID number from Iterator
