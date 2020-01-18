@@ -124,7 +124,6 @@ def check_id_valid(id_number):
 # ----------------
 # Start of program
 # ----------------
-if __name__ == "__main__":
     '''
     process:
     1) Get and check input from user
@@ -139,6 +138,8 @@ if __name__ == "__main__":
         id_iter ----> Object of type Iterator
         id_gen -----> Object of type Generator
     '''
+if __name__ == '__main__':
+    
     id_number = int(input("Please enter ID number (9 integer digits only):\n"))
     input_check(id_number)          
     id_valid = check_id_valid(id_number)
