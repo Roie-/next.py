@@ -129,7 +129,7 @@ def check_id_valid(id_number):
     1) Get and check input from user
     2) Print 10 valid ID number from Iterator
     3) Print 10 valid ID number from Generator
-
+s
     params:
         id_number --> Input from user
         id_valid ---> Booliane Result from function
@@ -139,7 +139,7 @@ def check_id_valid(id_number):
         id_gen -----> Object of type Generator
     '''
 if __name__ == '__main__':
-    
+
     id_number = int(input("Please enter ID number (9 integer digits only):\n"))
     input_check(id_number)          
     id_valid = check_id_valid(id_number)
