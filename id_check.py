@@ -108,7 +108,7 @@ def check_id_valid(id_number):
         2) Print 10 valid ID number from Iterator
         3) Print 10 valid ID number from Generator
 
-        params:
+        Params:
         id_number --> Input from user
         id_valid ---> Booliane Result from function
                       check_id_valid (True/False)
