@@ -1,5 +1,5 @@
 from PIL import Image
-import PIL
+
 
 img = Image.open('pic.jpg')
 img.show()
