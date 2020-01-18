@@ -30,8 +30,8 @@ class IDIterator:
     self._stop --> ID number limit
 
     Raises:
-    StopIteration --> When ID number higher from limit 
-    '''
+    StopIteration --> When ID number higher from limit '''
+
     def __init__(self,id=0,stop=999999999):
         self._id = id
         self._stop = stop
@@ -64,8 +64,8 @@ def id_generator(id):
 
     Params: 
         id ----> Input ID number
-        stop --> ID number limit
-    '''
+        stop --> ID number limit'''
+
     id += 1
     stop = 999999999
     while id <= stop:
@@ -85,8 +85,8 @@ def input_check(id):
     
     Raises:
         NotPositiveNumber --> negetive number or string
-        ValueError ---------> Not exectly 9 positive digits
-    '''
+        ValueError ---------> Not exectly 9 positive digits'''
+
     try:            
         if not (isinstance(id,int)) or id < 0:
             raise NotPositiveNumber(id)
@@ -111,8 +111,8 @@ def check_id_valid(id_number):
              return True if yes, False otherwise
 
     Params:
-        id_number --> Input from user
-    '''   
+        id_number --> Input from user'''
+
     if sum(sum(map(int, str(int(a)*(i%2+1)))) for i, a in enumerate("{0:09d}".format(int(id_number)))) % 10 == 0:
         return True
     else:
@@ -136,8 +136,7 @@ def check_id_valid(id_number):
                       check_id_valid (True/False)
         id_count ---> Number of valid ID's
         id_iter ----> Object of type Iterator
-        id_gen -----> Object of type Generator
-    '''
+        id_gen -----> Object of type Generator'''
 
 if __name__ == '__main__':
     id_number = int(input("Please enter ID number (9 integer digits only):\n"))
