@@ -9,8 +9,7 @@ class NotPositiveNumber(Exception):
 
 
     def __str__(self):
-        raise "argument %s is not a positive integer." % self._arg
-
+        raise "argument {} is not a positive integer.".format(self._arg)    
 
     def get_arg(self):
         return self._arg
@@ -91,7 +90,7 @@ def input_check(id):
         if not (isinstance(id,int)) or id < 0:
             raise NotPositiveNumber(id)
     except NotPositiveNumber as e:
-            print('Function Expected positive integer, and instead got %s.' % id, type(e.get_arg()))
+            print('Function Expected positive integer, and instead got {} {}.'.format(id, type(e.get_arg())))
     else:
         digits = int(math.log10(id))+1
 
