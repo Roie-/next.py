@@ -128,19 +128,14 @@ if __name__ == '__main__':
     if id_valid:
         print(id_iter)
         id_count += 1
-        id_number = next(id_iter)
-    else:
-        id_number = next(id_iter)
+    id_number = next(id_iter)
 
     while id_count < 10:
         id_valid = check_id_valid(id_number)
         if id_valid:
             print(id_iter)
-            id_number = next(id_iter)
             id_count += 1
-        else:
-            id_number = next(id_iter)
-            continue    
+        id_number = next(id_iter)
    
     print('\n10 valid ID from Generator\n--------------------------')
     id_count = 0
@@ -150,17 +145,12 @@ if __name__ == '__main__':
     if id_valid:
         print(id_gen)
         id_count += 1
-        id_number = next(id_gen)
-    else:
-        id_number = next(id_gen)
+    id_number = next(id_gen)
 
     while id_count < 10:
         id_valid = check_id_valid(id_number)
         if id_valid:
             print(id_number)
-            id_number = next(id_gen)
             id_count += 1
-        else:
-            id_number = next(id_gen)
-            continue
+        id_number = next(id_gen)
         
