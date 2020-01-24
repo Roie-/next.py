@@ -1,4 +1,4 @@
-# next.py (Intermediate Python Course)
+# next.py (Basic Python Course)
 
 #### Very simple and basic solution for 3 assignments:
 - [x] 2.5 &#129138; hython.py (oop) :100:
