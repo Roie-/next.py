@@ -47,7 +47,9 @@ second = (
 
 
 img = Image.open("pic.jpg")
-
+x=first[10]
+y=first[11]
 
 draw = ImageDraw.Draw(img)
-
+draw.line((x,img.size[1],img.size[1],y),fill=128,width=5)
+img.show()
