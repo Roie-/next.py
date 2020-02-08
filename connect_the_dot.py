@@ -53,3 +53,13 @@ y=first[11]
 draw = ImageDraw.Draw(img)
 draw.line((x,img.size[1],img.size[1],y),fill=128,width=5)
 img.show()
+
+
+def add(x,y):
+    return x+y
+
+def sub(x,y):
+    return x-y
+
+def mul(x,y):
+    return x*y
