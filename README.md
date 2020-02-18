@@ -6,5 +6,6 @@
 - [ ] 6.4 &#129138; connect_the_dots.py (Modules)
 <br>
 
-<nowiki>*</nowiki>The main purpose of the assignments is to check understanding of the material,
+## Notes
+The main purpose of the assignments is to check understanding of the material,
 design of code and proper documentation, nothing more.
