@@ -45,21 +45,25 @@ second = (
     128, 156, 134, 157, 136, 156, 136
 )
 
+mrg1=tuple((first[i],first[i+1]) for i in range(0,len(first)-1))
+mrg2=tuple((second[i],second[i+1]) for i in range(0,len(second)-1))
+# print(mrg1,mrg2)
+
+#connect all the dots together 
+all_dots = first + second
 
 img = Image.open("pic.jpg")
-x=first[10]
-y=first[11]
+draw = ImageDraw.Draw(img)  
 
-draw = ImageDraw.Draw(img)
-draw.line((x,img.size[1],img.size[1],y),fill=128,width=5)
+# for x,y in mrg1:
+#   draw.line((x,y)+(x+5,y+5),fill=(0,0,128),width=3) 
+
+# for x,y in mrg2:
+#   draw.line((x,y)+(x-y,y-x),fill=128,width=5) 
+
+for i in range(0, len(all_dots), 2):
+  x = int(all_dots[i])
+  y = int(all_dots[i+1])
+  draw.line((x,y)+(x+2,y+2),fill=(0,0,255),width=3) 
+
 img.show()
-
-
-def add(x,y):
-    return x+y
-
-def sub(x,y):
-    return x-y
-
-def mul(x,y):
-    return x*y
